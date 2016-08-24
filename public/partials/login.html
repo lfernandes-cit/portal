@@ -1,7 +1,26 @@
-<div class="loginmodal-container">
- <h1>Login to Your Account</h1><br>
- <form>
-<input type="text" name="user" placeholder="Username">
-<input type="password" name="pass" placeholder="Password">
-<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-</form>
+<div class="container">
+
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <section class="login-form">
+        <form role="login">
+          <input type="text" ng-model="usuario.login" id="name" name="login" placeholder="Login" required class="form-control input-lg" value="" />
+
+          <input type="password" ng-model="usuario.senha" id="senha"  class="form-control input-lg" id="password" placeholder="Password" required="" />
+
+
+          <div class="pwstrength_viewport_progress"></div>
+
+
+          <button  name="go" ng-click="logar(usuario)" id="signIn"  class="btn btn-lg btn-primary btn-block">Sign in</button>
+
+      </section>
+      </div>
+
+
+
+  </div>
+
+</div>
