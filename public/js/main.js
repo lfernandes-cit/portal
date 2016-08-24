@@ -3,8 +3,8 @@ angular.module('portal', ['ngRoute', 'ngResource'])
 
         $locationProvider.html5Mode(true);
 
-        $routeProvider.when('/', {
-            templateUrl: 'index.html'
+        $routeProvider.when('/login', {
+            templateUrl: 'partials/login.html'
         });
 
         $routeProvider.otherwise({redirectTo: '/'});
