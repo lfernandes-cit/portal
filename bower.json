@@ -1,0 +1,19 @@
+{
+  "name": "portal",
+  "description": "Portal para estudo de Angularjs com api em springMVC",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "angularjs#^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
