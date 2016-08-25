@@ -1,9 +1,9 @@
-angular.module('portal').controller("LoginController", function($scope, $http, $location, $cookies){
+angular.module('portal').controller("LoginController", function($scope, $http, $location, $cookies, IpFactory){
 
     $scope.logar = function(usuario){
         console.log(usuario);
 
-        $http.post("http://172.16.18.120:8080/portal/usuario", usuario).then(
+        $http.post(IpFactory.host + "/portal/usuario", usuario).then(
         function(retorno){
             if(retorno.data && retorno.data.object.id){
                 $cookies.putObject("usuarioLogado", retorno.data.object);
