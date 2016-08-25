@@ -1,7 +1,24 @@
-<table>
 
-  <tr ng-repeat="ec in ecs">
-    <td>{{ ec.id }}</td>
-    <td>{{ ec.nome }}</td>
-  </tr>
-</table>
+<div class="list">
+
+	<table class="table table-striped">
+		<tr>
+			<th></th>
+			<th><input type="text" class="form-control" name="filtroId" ng-model="filtro.id"></th>
+			<th><input type="text" class="form-control" name="filtroNome"   ng-model="filtro.nome"></th>
+			<th><input type="text" class="form-control" name="filtroCidade" ng-model="filtro.cidade"></th>
+		</tr>
+		<tr>
+			<th><input type="checkbox" name="selecionarTodos" ng-model = "checkSelecionarTodos" ng-click="selecionarTodos()"></th>
+			<th><a href = "" ng-click = "ordenarPor('id')">Id</a></th>
+			<th><a href = "" ng-click = "ordenarPor('nome')">Nome</a></th>
+			<th><a href = "" ng-click = "ordenarPor('cidade')">Cidade</a></th>
+		</tr>
+		<tr ng-repeat="ec in ecs | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | filter:filtro">
+			<td><input type="checkbox" name="ecSelecionado" ng-model = "ec.selecionado"></td>
+			<td>{{ ec.id }}</td>
+			<td>{{ ec.nome }}</td>
+			<td>{{ ec.cidade }}</td>
+		</tr>
+	</table>
+</div>
