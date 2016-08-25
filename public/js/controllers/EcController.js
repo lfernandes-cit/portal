@@ -1,4 +1,4 @@
-angular.module('portal').controller('EcController' , function ($scope, $http, $cookies) {
+angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location) {
 	
 	var idUsuario = $cookies.getObject("usuarioLogado").id;
 	
@@ -23,6 +23,10 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 	$scope.ordenarPor = function (campo) {
 		$scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
 		$scope.criterioDeOrdenacao = campo;
+	}
+	
+	$scope.adicionarEc = function () {
+		$location.path( "/ec/adicionar");
 	}
 	
 });

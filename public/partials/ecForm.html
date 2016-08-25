@@ -1,0 +1,18 @@
+<div name="ecWrapper" class = "container">
+
+	<h2>Estabelecimento Comercial</h2>
+	<form name="ecForm">
+		<input class="form-control" type="text" ng-model="ec.nome" name="nome" placeholder="Nome"  ng-required = "true"/>
+		<input class="form-control" type="text" ng-model="ec.telefone" name="telefone" placeholder="Telefone"  ng-required = "true" ui-mask="(99) 99999-9999" ui-mask-placeholder ui-mask-placeholder-char="_"/>
+		<input class="form-control" type="text" ng-model="ec.endereco" name="endereco" placeholder="Endereço" >
+		<input class="form-control" type="text" ng-model="ec.numero" name="numero" placeholder="Número" ui-mask = "99999" ui-mask-placeholder>
+		<input class="form-control" type="text" ng-model="ec.cidade" name="cidade" placeholder="Cidade" >
+		<input class="form-control" type="text" ng-model="ec.pais" name="pais" placeholder="País" >
+		<input class="form-control" type="text" ng-model="ec.pos" name="pos" placeholder="POS" ng-required = "true">
+		<div>
+			<button class="btn btn-primary" ng-disabled="ecForm.$invalid">Salvar</button>
+			<button class="btn btn-primary" >Voltar</button>
+		</div>
+		
+	</form>
+</div>
