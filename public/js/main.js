@@ -1,5 +1,5 @@
 angular.module('portal', ['ngRoute', 'ngResource'])
-    .config(function($routeProvider, $locationProvider){
+    .config(function($routeProvider, $locationProvider, $httpProvider){
 
         $locationProvider.html5Mode(true);
 
@@ -8,6 +8,15 @@ angular.module('portal', ['ngRoute', 'ngResource'])
             controller: 'LoginController'
         });
 
+        $routeProvider.when('/ec',{
+            templateUrl: 'partials/ec.html',
+            controller: 'EcController'
+          });
+        
+        $httpProvider.defaults.headers.common['Authorization'] = 'Basic cG9ydGFsOnAwcnRAbA==';
+        $httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
+        
+        
         $routeProvider.otherwise({redirectTo: '/'});
 
     });
