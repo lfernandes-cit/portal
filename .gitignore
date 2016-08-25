@@ -1,5 +1,9 @@
 .tmp
 .DS_Store
+.settings
+install_nvm.sh
+/.settings?
+.project
 /.DS_Store?
 /node_modules/
 /public/vendor
