@@ -1,8 +1,10 @@
-angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location, IpFactory, $rootScope) {
+angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location, IpFactory, $rootScope, $timeout) {
 
-	console.log($rootScope.messages);
 	if ($rootScope.messages) {
+		$scope.mostraMensagem = true;
+		$timeout(function() {$scope.mostraMensagem = false;}, 5000); 
 		$scope.messages = $rootScope.messages;	
+		
 	}
 	
 	var idUsuario = $cookies.getObject("usuarioLogado").id;
