@@ -1,4 +1,4 @@
-angular.module('portal', ['ngRoute', 'ngResource', 'ngCookies'])
+angular.module('portal', ['ngRoute', 'ngResource', 'ngCookies', 'ui.mask'])
 .config(function($routeProvider, $locationProvider, $httpProvider){
 
 	$locationProvider.html5Mode(true);
@@ -11,6 +11,11 @@ angular.module('portal', ['ngRoute', 'ngResource', 'ngCookies'])
 	$routeProvider.when('/ec',{
 		templateUrl: 'partials/ec.html',
 		controller: 'EcController'
+	});
+	
+	$routeProvider.when('/ec/adicionar',{
+		templateUrl: 'partials/ecForm.html',
+		controller: 'FormEcController'
 	});
 
 	$httpProvider.defaults.headers.common['Authorization'] = 'Basic cG9ydGFsOnAwcnRAbA==';

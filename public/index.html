@@ -44,6 +44,7 @@
 
     <div class="jumbotron text-center">
       <h2>Portal</h2>
+      {{usuarioLogado}} 
     </div>
 
     <div ng-view></div>
@@ -53,10 +54,12 @@
     <script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/angular-resource/angular-resource.js"></script>
     <script src="vendor/angular-cookies/angular-cookies.js"></script>
+    <script src='vendor/angular-ui-mask/dist/mask.js'></script>
     <script src="js/main.js"></script>
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/EcController.js"></script>
     <script src="js/controllers/indexController.js"></script>
+    <script src="js/controllers/formEcController.js"></script>
     <script src="js/services/ipService.js"></script>
     <!-- endbuild -->
   </body>
