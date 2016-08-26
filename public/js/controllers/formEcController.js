@@ -1,5 +1,11 @@
-angular.module('portal').controller("FormEcController", function($scope, $http, IpFactory, $cookies, $location){
+angular.module('portal').controller("FormEcController", function($scope, $http, IpFactory, $cookies, $location, $routeParams){
 
+    if ($routeParams.id) {
+        $http.get(IpFactory.host + '/portal/ec?idEc=' + $routeParams.id).then(function (response) {
+            console.log(response);
+            $scope.ec = response.data.object;
+        });
+    }
 	
     
     $http.get(IpFactory.host + '/portal/pais').then(function (response) {
@@ -19,6 +25,10 @@ angular.module('portal').controller("FormEcController", function($scope, $http, 
     	        function(erro){
     	            console.log("Erro"+ erro); 
     	        }); 
+    }
+
+    $scope.voltar = function(ec) {
+        $location.path( "/ec");
     }
 
 });

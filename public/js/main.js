@@ -18,6 +18,11 @@ angular.module('portal', ['ngRoute', 'ngResource', 'ngCookies', 'ui.mask'])
 		controller: 'FormEcController'
 	});
 
+	$routeProvider.when('/ec/editar/:id',{
+		templateUrl: 'partials/ecForm.html',
+		controller: 'FormEcController'
+	});
+
 	$httpProvider.defaults.headers.common['Authorization'] = 'Basic cG9ydGFsOnAwcnRAbA==';
 	$httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
 

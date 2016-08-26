@@ -2,7 +2,7 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 	
 	var idUsuario = $cookies.getObject("usuarioLogado").id;
 	
-	$http.get(IpFactory.host + '/portal/ec?idUsuario='+idUsuario).then(function (response) {
+	$http.get(IpFactory.host + '/portal/ec/usuario/?idUsuario='+idUsuario).then(function (response) {
 		$scope.ecs = response.data.object;
 		
 	});
@@ -27,6 +27,10 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 	
 	$scope.adicionarEc = function () {
 		$location.path( "/ec/adicionar");
+	}
+
+	$scope.editarEc = function (ec) {
+		$location.path( "/ec/editar/" + ec.id);	
 	}
 	
 });

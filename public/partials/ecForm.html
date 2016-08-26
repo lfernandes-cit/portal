@@ -1,21 +1,58 @@
 <div name="ecWrapper" class = "container">
 
 	<h2>Estabelecimento Comercial</h2>
+		
+	<div ng-show="ecForm.nome.$error.required && ecForm.nome.$dirty" class="alert alert-danger">
+			Por favor, preencha o campo Nome!
+	</div>
+	<div ng-show="ecForm.telefone.$error.required && ecForm.telefone.$dirty" class="alert alert-danger">
+			Por favor, preencha o campo Telefone!
+	</div>
+
+	<div ng-show="ecForm.telefone.$error.mask && ecForm.telefone.$dirty" class="alert alert-danger">
+			Por favor, preencha o campo Telefone corretamente!
+	</div>
+
+
+
 	<form name="ecForm">
-		<input class="form-control" type="text" ng-model="ec.nome" name="nome" placeholder="Nome"  ng-required = "true"/>
-		<input class="form-control" type="text" ng-model="ec.telefone" name="telefone" placeholder="Telefone"  ng-required = "true" ui-mask="(99) 99999-9999" ui-mask-placeholder ui-mask-placeholder-char="_"/>
-		<input class="form-control" type="text" ng-model="ec.endereco" name="endereco" placeholder="Endereço" >
-		<input class="form-control" type="text" ng-model="ec.numero" name="numero" placeholder="Número" ui-mask = "99999" ui-mask-placeholder>
-		<input class="form-control" type="text" ng-model="ec.cidade" name="cidade" placeholder="Cidade" >
-		<select class="form-control" ng-model="ec.pais" ng-options="pais.nome for pais in paises track by pais.id">
+
+		<label for="id" class="control-label" ng-show = "ec.id">Id</label>
+		<input class="form-control input-md" type="text" ng-model="ec.id" name="id" ng-show = "ec.id" ng-disabled="true"/>
+
+		<label for="nome">Nome</label>
+		<input class="form-control" type="text" ng-model="ec.nome" name="nome" ng-required = "true" maxlength="50"/>
+
+		<label for="telefone">Telefone</label>
+		<input class="form-control" type="text" ng-model="ec.telefone" name="telefone"   ng-required = "true" ui-mask="(99) 99999-9999" ui-mask-placeholder ui-mask-placeholder-char="_"/>
+
+		<label for="endereco">Endereço</label>
+		<input class="form-control" type="text" ng-model="ec.endereco" name="endereco" maxlength="50">
+
+		<label for="numero">Número</label>
+		<input class="form-control" type="text" ng-model="ec.numero" name="numero" ui-mask = "?9?9?9?9?9">
+
+		<label for="numero">CEP</label>
+		<input class="form-control" type="text" ng-model="ec.cep" name="cep" ui-mask = "?9?9?9?9?9-?9?9?9">
+
+		<label for="cidade">Cidade</label>
+		<input class="form-control" type="text" ng-model="ec.cidade" name="cidade">
+
+		<label for="pais">País</label>
+		<select class="form-control" ng-model="ec.pais" name = "pais" ng-options="pais.nome for pais in paises track by pais.id">
 			<option value="">Selecione um pais</option>
 		</select>
-		<input class="form-control" type="text" ng-model="ec.pos" name="pos" placeholder="POS" ng-required = "true">
+
+		<label for="pos">POS</label>
+		<input class="form-control" type="text" ng-model="ec.pos" name="pos" ng-required = "true" ng-disabled = "ec.id && ">
 		<div>
-			<button class="btn btn-primary" ng-disabled="ecForm.$invalid" ng-click="salvarEc(ec)" >Salvar</button>
-			<button class="btn btn-primary" >Voltar</button>
+			<button class="btn btn-primary" ng-disabled="ecForm.$invalid || ecForm.$pristine" ng-click="salvarEc(ec)" >Salvar</button>
+			<button class="btn btn-primary" ng-click="voltar()">Voltar</button>
 		</div>
 		
 	</form>
+
+	
+	
 </div>
 
