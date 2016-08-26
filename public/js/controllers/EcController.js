@@ -52,6 +52,17 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 
 	}
 
+	$scope.excluirTodos = function(){
+		if ($scope.ecs && $scope.ecs.length > 0) {
+			$scope.ecs.map(function(ec){
+				if (ec.selecionado) {
+					$scope.excluir(ec.id);
+				}
+			});
+			listaEc();
+		}
+	}
+
 	listaEc();
 
 });
