@@ -1,12 +1,14 @@
 
 <div class="container">
-
+	<div><span ng-show="messages" class="col-md-12 alert alert-success"> {{messages}}</span></div>
+	
 	<table class="table table-striped">
 		<tr>
 			<th></th>
 			<th><input type="text" class="form-control" name="filtroId" ng-model="filtro.id"></th>
 			<th><input type="text" class="form-control" name="filtroNome"   ng-model="filtro.nome"></th>
 			<th><input type="text" class="form-control" name="filtroCidade" ng-model="filtro.cidade"></th>
+			<th></th>
 			<th></th>
 		</tr>
 		<tr>
@@ -16,6 +18,7 @@
 			<th><a href = "" ng-click = "ordenarPor('cidade')">Cidade</a></th>
 			<th></th>
 			<th></th>
+
 		</tr>
 		<tr ng-repeat="ec in ecs | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | filter:filtro">
 			<td><input type="checkbox" name="ecSelecionado" ng-model = "ec.selecionado"></td>
@@ -29,6 +32,7 @@
 		<tr>
 			<td></td>
 			<td><button class="btn btn-primary btn-block" ng-click="adicionarEc()">Adicionar</td>
+			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>

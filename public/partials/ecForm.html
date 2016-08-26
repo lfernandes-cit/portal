@@ -13,8 +13,6 @@
 			Por favor, preencha o campo Telefone corretamente!
 	</div>
 
-
-
 	<form name="ecForm">
 
 		<label for="id" class="control-label" ng-show = "ec.id">Id</label>
@@ -44,7 +42,7 @@
 		</select>
 
 		<label for="pos">POS</label>
-		<input class="form-control" type="text" ng-model="ec.pos" name="pos" ng-required = "true" ng-disabled = "ec.id && ">
+		<input class="form-control" type="text" ng-model="ec.pos" name="pos" ng-required = "true" ng-disabled = "ec.id">
 		<div>
 			<button class="btn btn-primary" ng-disabled="ecForm.$invalid || ecForm.$pristine" ng-click="salvarEc(ec)" >Salvar</button>
 			<button class="btn btn-primary" ng-click="voltar()">Voltar</button>

@@ -1,4 +1,4 @@
-angular.module('portal').controller("FormEcController", function($scope, $http, IpFactory, $cookies, $location, $routeParams){
+angular.module('portal').controller("FormEcController", function($scope, $http, IpFactory, $cookies, $location, $routeParams, $rootScope){
 
     if ($routeParams.id) {
         $http.get(IpFactory.host + '/portal/ec?idEc=' + $routeParams.id).then(function (response) {
@@ -19,6 +19,7 @@ angular.module('portal').controller("FormEcController", function($scope, $http, 
     	$http.post(IpFactory.host + "/portal/ec", ec).then(
     	        function(retorno){
     	            if(retorno){
+                        $rootScope.messages = "Estabelecimento Comercial gravado com sucesso";
     	                $location.path( "/ec");
     	            }
     	        },
