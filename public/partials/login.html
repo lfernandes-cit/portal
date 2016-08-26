@@ -1,9 +1,13 @@
 <div class="container" ng-hide="usuarioLogado != null">
 
-  <div class="row" id="pwd-container">
-    <div class="col-md-4"></div>
+  <div ng-show="message" class="alert alert-danger">
+     {{message}}
+  </div>
 
-    <div class="col-md-4">
+  <div class="row" id="pwd-container">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
       <section class="login-form">
         <form role="login">
           <input type="text" ng-model="usuario.login" id="name" name="login" placeholder="Login" required class="form-control input-lg" value="" />
@@ -18,9 +22,6 @@
 
       </section>
       </div>
-
-
-
   </div>
 
 </div>
