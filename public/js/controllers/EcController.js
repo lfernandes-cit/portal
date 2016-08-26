@@ -1,8 +1,8 @@
-angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location) {
+angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location, IpFactory) {
 	
 	var idUsuario = $cookies.getObject("usuarioLogado").id;
 	
-	$http.get('http://172.16.18.120:8080/portal/ec?idUsuario='+idUsuario).then(function (response) {
+	$http.get(IpFactory.host + '/portal/ec?idUsuario='+idUsuario).then(function (response) {
 		$scope.ecs = response.data.object;
 		
 	});

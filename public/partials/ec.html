@@ -7,22 +7,27 @@
 			<th><input type="text" class="form-control" name="filtroId" ng-model="filtro.id"></th>
 			<th><input type="text" class="form-control" name="filtroNome"   ng-model="filtro.nome"></th>
 			<th><input type="text" class="form-control" name="filtroCidade" ng-model="filtro.cidade"></th>
+			<th></th>
 		</tr>
 		<tr>
 			<th><input type="checkbox" name="selecionarTodos" ng-model = "checkSelecionarTodos" ng-click="selecionarTodos()"></th>
 			<th><a href = "" ng-click = "ordenarPor('id')">Id</a></th>
 			<th><a href = "" ng-click = "ordenarPor('nome')">Nome</a></th>
 			<th><a href = "" ng-click = "ordenarPor('cidade')">Cidade</a></th>
+			<th></th>
 		</tr>
 		<tr ng-repeat="ec in ecs | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | filter:filtro">
 			<td><input type="checkbox" name="ecSelecionado" ng-model = "ec.selecionado"></td>
 			<td>{{ ec.id }}</td>
 			<td>{{ ec.nome }}</td>
 			<td>{{ ec.cidade }}</td>
+			<td><a href="#"> <span class="glyphicon glyphicon-pencil"></span> </a></td>
+			
 		</tr>
 		<tr>
 			<td></td>
 			<td><button class="btn btn-primary btn-block" ng-click="adicionarEc()">Adicionar</td>
+			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
