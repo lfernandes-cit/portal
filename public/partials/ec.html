@@ -15,14 +15,16 @@
 			<th><a href = "" ng-click = "ordenarPor('nome')">Nome</a></th>
 			<th><a href = "" ng-click = "ordenarPor('cidade')">Cidade</a></th>
 			<th></th>
+			<th></th>
 		</tr>
 		<tr ng-repeat="ec in ecs | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | filter:filtro">
 			<td><input type="checkbox" name="ecSelecionado" ng-model = "ec.selecionado"></td>
 			<td>{{ ec.id }}</td>
 			<td>{{ ec.nome }}</td>
 			<td>{{ ec.cidade }}</td>
-			<td><a href="#" ng-click="editarEc(ec)"> <span class="glyphicon glyphicon-pencil"></span> </a></td>
-			
+			<td><a ng-click="editarEc(ec)"> <span class="glyphicon glyphicon-pencil"></span> </a></td>
+			<td><a ng-click="excluir(ec.id)"> <span class="glyphicon glyphicon-remove"></span> </a></td>
+
 		</tr>
 		<tr>
 			<td></td>
