@@ -1,4 +1,4 @@
-angular.module('portal', ['ngRoute', 'ngResource', 'ngCookies', 'ui.mask', 'ngAnimate'])
+angular.module('portal', ['ngRoute', 'ngResource', 'ngCookies', 'ui.mask'])
 .config(function($routeProvider, $locationProvider, $httpProvider){
 
 	$locationProvider.html5Mode(true);

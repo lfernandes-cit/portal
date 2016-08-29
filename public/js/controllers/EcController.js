@@ -2,7 +2,7 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 
 	if ($rootScope.messages) {
 		$scope.mostraMensagem = true;
-		$timeout(function() {$scope.mostraMensagem = false;}, 5000); 
+		//$timeout(function() {$scope.mostraMensagem = false;}, 5000); 
 		$scope.messages = $rootScope.messages;	
 		
 	}
@@ -15,6 +15,10 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 			$scope.ecs = response.data.object;
 
 		});
+	}
+
+	$scope.apagarMensagem = function () {
+		$scope.mostraMensagem = !$scope.mostraMensagem;
 	}
 
 	$scope.selecionarTodos = function () {
