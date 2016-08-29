@@ -27,17 +27,37 @@
 			<td>{{ ec.nome }}</td>
 			<td>{{ ec.cidade }}</td>
 			<td><a ng-click="editarEc(ec)"> <span class="glyphicon glyphicon-pencil"></span> </a></td>
-			<td><a ng-click="excluir(ec.id)"> <span class="glyphicon glyphicon-trash"></span> </a></td>
+			<td><a ng-click="modalExcluir(ec.id)" data-toggle="modal" data-target=".bs-example-modal-sm"> <span class="glyphicon glyphicon-trash"></span> </a></td>
 
 		</tr>
 		<tr>
 			<td></td>
 			<td><button id="adicionar" class="btn btn-primary btn-block" ng-click="adicionarEc()">Adicionar</button></td>
-			<td><button id="excluir" class="btn btn-danger btn-block" ng-click="excluirTodos()">Excluir</button></td>
+			<td><button id="excluir" class="btn btn-danger btn-block" data-toggle="modal" data-target=".bs-example-modal-sm">Excluir</button></td>
 			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
 	</table>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Confirmar exclusão</h4>
+			</div>
+			<div class="modal-body">
+				<p>Confirma exclusão de EC?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+				<button ng-show="idEcExcluir" ng-click="excluir(idEcExcluir)" data-dismiss="modal" type="button" class="btn btn-primary">Sim</button>
+				<button ng-hide="idEcExcluir" ng-click="excluirTodos()" data-dismiss="modal" type="button" class="btn btn-primary">Sim</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 </div>

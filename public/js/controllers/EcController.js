@@ -1,10 +1,7 @@
-angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location, IpFactory, $rootScope, $timeout) {
+angular.module('portal').controller('EcController' , function ($scope, $http, $cookies, $location, IpFactory, $rootScope) {
 
 	if ($rootScope.messages) {
-		$scope.mostraMensagem = true;
-		//$timeout(function() {$scope.mostraMensagem = false;}, 5000); 
 		$scope.messages = $rootScope.messages;	
-		
 	}
 	
 	var idUsuario = $cookies.getObject("usuarioLogado").id;
@@ -47,14 +44,21 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 		$location.path( "/ec/editar/" + ec.id);
 	}
 
+	$scope.modalExcluir = function(id){
+		$scope.idEcExcluir = id;
+	}
+
 	$scope.excluir = function(id){
 		$http.delete(IpFactory.host + '/portal/ec?id='+id).then(
 		function(retorno){
 			listaEc();
+			$scope.messages = "Ec excluido com sucesso!"
 		},
 		function(erro){
 				console.log("Erro"+ erro);
 		});
+
+		$scope.idEcExcluir = null;
 
 	}
 
