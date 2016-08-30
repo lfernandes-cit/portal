@@ -6,7 +6,9 @@ describe('Login', function(){
 
     beforeEach(function(){
         pagina.visita();
+        pagina.dadoQueclicoLogOut();
     }); 
+
 
     it('Login com sucesso', function(){
         pagina.dadoQueDigitoUsuario("usuario");
@@ -21,5 +23,6 @@ describe('Login', function(){
         pagina.dadoQueclicoSingIn();
         expect(pagina.entaoObtemMenssagemErro()).toContain('Usuario ou senha inválido.'); 
     });
+
 
 });

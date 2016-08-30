@@ -15,6 +15,16 @@ var loginPage = function(){
         element(by.id("signIn")).click();  
     };
 
+    this.dadoQueclicoLogOut = function(){
+        var botao = element(by.id("Logout"));
+            botao.getText().then(function(text) {
+            if(text){
+                botao.click();
+            }
+        });
+    };
+
+
     this.entaoObtemUsuarioLogado = function(){
         return element(by.binding("usuarioLogado.nome")).getText();
     };
