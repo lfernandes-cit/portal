@@ -1,6 +1,6 @@
 var LoginPage = new require('./pages/loginPage');
 
-describe('Login de usuario', function(){
+describe('Login', function(){
 
     var pagina = new LoginPage();
 
@@ -13,6 +13,13 @@ describe('Login de usuario', function(){
         pagina.dadoQueDigitoSenha("usuario");
         pagina.dadoQueclicoSingIn();
         expect(pagina.entaoObtemUsuarioLogado()).toContain('usuario'); 
+    });
+
+    it('Login com falha', function(){
+        pagina.dadoQueDigitoUsuario("naoexiste");
+        pagina.dadoQueDigitoSenha("naoexiste");
+        pagina.dadoQueclicoSingIn();
+        expect(pagina.entaoObtemMenssagemErro()).toContain('Usuario ou senha inválido.'); 
     });
 
 });

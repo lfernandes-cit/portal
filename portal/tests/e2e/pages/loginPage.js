@@ -19,6 +19,11 @@ var loginPage = function(){
         return element(by.model("usuarioLogado.nome")).getText();
     };
 
+
+    this.entaoObtemMenssagemErro = function(){
+        return element(by.css(".alert-danger")).getText();
+    };
+
 }
 
 module.exports = loginPage;
