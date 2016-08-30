@@ -4,8 +4,15 @@ var ecPage = function(){
     };
 
     this.entaoListaEc = function() {
-    	return element.all(by.repeater('ec in ecs | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | filter:filtro'));
+    	return element.all(by.repeater('ec in ecs'));
+    };
 
+    this.dadoQueClicoAdicionarEc = function(){
+        element(by.id("adicionar")).click();  
+    };
+
+    this.entaoMostraMensagemSucesso = function(){
+    	return element(by.css(".alert-success")).getText();  
     };
 }
 

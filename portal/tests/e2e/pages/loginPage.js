@@ -35,11 +35,11 @@ var loginPage = function(){
     };
 
     this.dadoQueLogoComUsuarioValido = function(login, senha){
-        //if (element(by.binding("usuarioLogado.nome"))) {
+        if (element(by.binding("usuarioLogado.nome"))) {
             element(by.model("usuario.login")).sendKeys(login);
             element(by.model("usuario.senha")).sendKeys(senha);
             element(by.id("signIn")).click();
-        //}
+        }
         
     };
 

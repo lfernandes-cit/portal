@@ -2,6 +2,7 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 
 	if ($rootScope.messages) {
 		$scope.messages = $rootScope.messages;	
+		$scope.mostraMensagem = true;	
 	}
 	
 	var idUsuario = $cookies.getObject("usuarioLogado").id;
