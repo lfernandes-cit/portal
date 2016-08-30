@@ -5,7 +5,7 @@ angular.module('portal').controller("LoginController", function($scope, $rootSco
     $scope.logar = function(usuario){
         console.log(usuario);
 
-        $http.post(IpFactory.host + "/portal/usuario", usuario).then(
+        $http.post(IpFactory.host + "/portal-api/usuario", usuario).then(
         function(retorno){
             if(retorno.data && retorno.data.object){
                 $cookies.putObject("usuarioLogado", retorno.data.object);

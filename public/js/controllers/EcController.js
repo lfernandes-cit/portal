@@ -11,7 +11,7 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 
 
 	listaEc = function(){
-		$http.get(IpFactory.host + '/portal/ec/usuario/?idUsuario='+idUsuario).then(function (response) {
+		$http.get(IpFactory.host + '/portal-api/ec/usuario/?idUsuario='+idUsuario).then(function (response) {
 			$scope.ecs = response.data.object;
 
 		});
@@ -48,7 +48,7 @@ angular.module('portal').controller('EcController' , function ($scope, $http, $c
 	}
 
 	$scope.excluir = function(id){
-		$http.delete(IpFactory.host + '/portal/ec?id='+id).then(
+		$http.delete(IpFactory.host + '/portal-api/ec?id='+id).then(
 		function(retorno){
 			listaEc();
 		},
