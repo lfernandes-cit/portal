@@ -8,6 +8,13 @@ describe('Login', function(){
         pagina.visita();
     }); 
 
+    it('Login com falha', function(){
+        pagina.dadoQueDigitoUsuario("naoexiste");
+        pagina.dadoQueDigitoSenha("naoexiste");
+        pagina.dadoQueclicoSingIn();
+        expect(pagina.entaoObtemMenssagemErro()).toContain('Usuario ou senha inválido.'); 
+    });
+
     it('Login com sucesso', function(){
         pagina.dadoQueDigitoUsuario("usuario");
         pagina.dadoQueDigitoSenha("usuario");
@@ -15,11 +22,6 @@ describe('Login', function(){
         expect(pagina.entaoObtemUsuarioLogado()).toContain('usuario'); 
     });
 
-    it('Login com falha', function(){
-        pagina.dadoQueDigitoUsuario("naoexiste");
-        pagina.dadoQueDigitoSenha("naoexiste");
-        pagina.dadoQueclicoSingIn();
-        expect(pagina.entaoObtemMenssagemErro()).toContain('Usuario ou senha inválido.'); 
-    });
+    
 
 });
