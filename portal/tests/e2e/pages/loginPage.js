@@ -34,6 +34,15 @@ var loginPage = function(){
         return element(by.css(".alert-danger")).getText();
     };
 
+    this.dadoQueLogoComUsuarioValido = function(login, senha){
+        //if (element(by.binding("usuarioLogado.nome"))) {
+            element(by.model("usuario.login")).sendKeys(login);
+            element(by.model("usuario.senha")).sendKeys(senha);
+            element(by.id("signIn")).click();
+        //}
+        
+    };
+
 }
 
 module.exports = loginPage;
