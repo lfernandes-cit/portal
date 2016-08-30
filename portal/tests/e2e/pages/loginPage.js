@@ -16,7 +16,7 @@ var loginPage = function(){
     };
 
     this.entaoObtemUsuarioLogado = function(){
-        return element(by.model("usuarioLogado.nome")).getText();
+        return element(by.binding("usuarioLogado.nome")).getText();
     };
 
 
