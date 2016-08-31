@@ -1,0 +1,21 @@
+#language: pt
+
+Feature:  Acessar o site de Cadastro de Estabelecimento Comercial
+
+ @CEC
+Scenario:  Acessar a tela de Login do Estabelecimento Comercial e logar no sistema
+  Given que eu acesso a tela 'Portal'
+  And desejo clicar no botão 'Login'
+  And desejo informar login e senha
+  And aciono o botão 'Sign in'
+  Then o login será apresentado na tela de cadastro
+
+ @CEC1
+ Scenario:  Acessar a tela de Cadastro do Estabelecimento Comercial e cadastrar um estabelecimento
+   Given que eu acesso a tela de Cadastro
+   And desejo cadastrar um novo estabelecimento comercial
+   And aciono o botão 'Adicionar'
+   And informo todos os dados do cadastro
+   And clico no botão 'Salvar'
+   And o sistema inclui o registro na lista
+   Then é apresentada a mensagem 'Registro salvo com sucesso'

@@ -1,0 +1,19 @@
+#language: pt
+
+Feature:  Acessar o site de Cadastro de Estabelecimento Comercial
+
+ @CEC3
+Scenario:  Acessar a tela de Login do Estabelecimento Comercial e logar no sistema
+  Given que eu acesso a tela 'Portal'
+  And desejo informar login e senha
+  And aciono o botão 'Logar'
+  Then o login será apresentado na tela de cadastro
+
+  @CEC3
+  Scenario:  Acessar a tela de Cadastro do Estabelecimento Comercial e editar um estabelecimento
+    Given que eu acesso a tela de Cadastro
+    And desejo editar o Estabelecimento Comercial ja cadastrado
+    And aciono o botão 'Editar' do registro desejado
+    And altero o nome e telefone do estabelecimento
+    And aciono o botão 'Salvar'
+    Then o sistema altera o registro na lista e apresenta a mensagem 'Registro alterado com sucesso'

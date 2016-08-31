@@ -1,0 +1,17 @@
+#language: pt
+
+Feature:  Acessar o site de Cadastro de Estabelecimento Comercial
+
+ @CEC2
+Scenario:  Acessar a tela de Login do Estabelecimento Comercial e logar no sistema
+  Given que eu acesso a tela 'Portal'
+  And desejo informar login e senha
+  And aciono o botão 'Logar'
+  Then o login será apresentado na tela de cadastro
+
+  @CEC2
+  Scenario:  Acessar a tela de Cadastro do Estabelecimento Comercial e buscar um estabelecimento
+    Given que eu acesso a tela de Cadastro
+    And desejo buscar um estabelecimento comercial
+    And informo os campos 'Código' e 'Nome'
+    Then o sistema apresenta o estabelecimento desejado na lista

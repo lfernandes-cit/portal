@@ -1,0 +1,20 @@
+#language: pt
+
+Feature:  Acessar o site de Cadastro de Estabelecimento Comercial
+
+ @CEC4
+ Scenario:  Acessar a tela de Login do Estabelecimento Comercial e logar no sistema
+   Given que eu acesso a tela 'Portal'
+   And desejo informar login e senha
+   And aciono o botão 'Logar'
+   Then o login será apresentado na tela de cadastro
+
+
+  @CEC4
+  Scenario:  Acessar a tela de Cadastro do Estabelecimento Comercial e excluir um estabelecimento
+    Given que eu acesso a tela de Cadastro
+    And desejo excluir um estabelecimento
+    And clico no botão 'Excluir' que está na frente do registro
+    And o sistema apresenta a mensagem  'Deseja excluir?'
+    And aciono a opção 'Sim'
+    Then o sistema excluir o estabelecimento da lista e apresenta a mensagem 'Registro excluído com sucesso'
