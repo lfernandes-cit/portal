@@ -2,7 +2,7 @@ var EcPage = new require('./pages/ecPage');
 var EcFormPage = new require('./pages/ecFormPage');
 var LoginPage = new require('./pages/loginPage');
 
-describe('EcForm', function(){
+/*describe('EcForm', function(){
 
     var login = new LoginPage();
     var ec = new EcPage();
@@ -36,5 +36,7 @@ describe('EcForm', function(){
         expect(ec.entaoMostraMensagemSucesso()).toContain('sucesso'); 
     });
 
+    
 
-});
+
+});*/
