@@ -11,11 +11,13 @@ var loginPage = function(){
         element(by.model("usuario.senha")).sendKeys(senha)
     }
 
-    this.dadoQueclicoSingIn = function(){
-        element(by.id("signIn")).click();  
+    this.dadoQueClicoSingIn = function(){
+         element(by.id("signIn")).click(function(){
+            return;
+        });  
     };
 
-    this.dadoQueclicoLogOut = function(){
+    this.dadoQueClicoLogOut = function(){
         var botao = element(by.id("Logout"));
             botao.getText().then(function(text) {
             if(text){

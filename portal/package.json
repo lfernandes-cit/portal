@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "protractor-cucumber-framework": "^0.6.0"
   }
 }
